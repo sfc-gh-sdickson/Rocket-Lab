@@ -2,9 +2,9 @@ name: rocket_lab_env
 channels:
   - snowflake
 dependencies:
-  - python=3.10
-  - pandas
+  - python=3.11
+  - snowflake-ml-python
   - scikit-learn
   - xgboost
+  - pandas
   - matplotlib
-  - snowflake-ml-python
