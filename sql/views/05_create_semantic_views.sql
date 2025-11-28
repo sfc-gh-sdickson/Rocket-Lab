@@ -26,6 +26,10 @@ CREATE OR REPLACE SEMANTIC VIEW SV_MISSION_INTELLIGENCE
       PRIMARY KEY (vehicle_id)
       WITH SYNONYMS ('rockets', 'launch vehicles', 'electrons', 'neutrons')
       COMMENT = 'Rocket Lab launch vehicles',
+    components AS RAW.COMPONENTS
+      PRIMARY KEY (component_id)
+      WITH SYNONYMS ('parts', 'rocket parts')
+      COMMENT = 'Components installed on vehicles',
     test_results AS RAW.TEST_RESULTS
       PRIMARY KEY (test_id)
       WITH SYNONYMS ('component tests', 'quality tests', 'testing data')
@@ -33,7 +37,8 @@ CREATE OR REPLACE SEMANTIC VIEW SV_MISSION_INTELLIGENCE
   )
   RELATIONSHIPS (
     missions(vehicle_id) REFERENCES vehicles(vehicle_id),
-    test_results(vehicle_id) REFERENCES vehicles(vehicle_id)
+    components(vehicle_id) REFERENCES vehicles(vehicle_id),
+    test_results(component_id) REFERENCES components(component_id)
   )
   DIMENSIONS (
     -- Mission dimensions
@@ -207,4 +212,3 @@ CREATE OR REPLACE SEMANTIC VIEW SV_SUPPLIER_COMPONENT_INTELLIGENCE
   COMMENT = 'Supplier & Component Intelligence - comprehensive view of supply chain';
 
 SELECT 'All semantic views created successfully' AS status;
-
