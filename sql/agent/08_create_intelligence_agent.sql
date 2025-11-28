@@ -178,13 +178,13 @@ tool_resources:
   MissionSearchService:
     search_service: 'ROCKET_LAB_INTELLIGENCE.RAW.MISSION_SEARCH_SERVICE'
     max_results: 5
-    title_column: 'mission_name'
-    id_column: 'mission_id'
+    title_column: 'doc_title'
+    id_column: 'doc_id'
   TestSearchService:
     search_service: 'ROCKET_LAB_INTELLIGENCE.RAW.TEST_SEARCH_SERVICE'
     max_results: 5
-    title_column: 'test_type'
-    id_column: 'test_id'
+    title_column: 'report_title'
+    id_column: 'report_id'
   PredictMissionRisk:
     type: 'procedure'
     identifier: 'ROCKET_LAB_INTELLIGENCE.ANALYTICS.PREDICT_MISSION_RISK'

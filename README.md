@@ -54,4 +54,3 @@ This solution enables natural language querying and predictive analytics for Roc
 - All SQL syntax verified against Snowflake documentation.
 - ML Feature Views ensure consistency between training and inference.
 - Data generation uses correct random function syntax.
-

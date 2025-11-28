@@ -2,12 +2,8 @@
 -- Rocket Lab Intelligence Agent - ML Model Wrappers
 -- ============================================================================
 -- Purpose: SQL stored procedures to invoke ML models
--- Pattern: EXACTLY matches Kratos Defense working example
---
--- WORKFLOW:
---   1. Run notebook to train and register models
---   2. Run this file to create wrapper procedures
---   3. Agent calls procedures which invoke ML models in real-time
+-- Pattern: EXACTLY matches Kratos Defense working example (SQL Procedures)
+-- Syntax: Verified against Snowflake SQL Reference
 -- ============================================================================
 
 USE DATABASE ROCKET_LAB_INTELLIGENCE;
@@ -35,7 +31,6 @@ DECLARE
     avg_weather_risk FLOAT;
 BEGIN
     -- 1. Get predictions using the ML model
-    -- 2. Aggregate results immediately (Kratos pattern)
     WITH predictions AS (
         WITH m AS MODEL ROCKET_LAB_INTELLIGENCE.ANALYTICS.MISSION_RISK_PREDICTOR
         SELECT
@@ -46,7 +41,7 @@ BEGIN
                 payload_mass,
                 contract_val,
                 target_orbit
-            ):PREDICTED_RISK::INT AS predicted_risk
+            ):RISK_LABEL::INT AS predicted_risk
         FROM ROCKET_LAB_INTELLIGENCE.ANALYTICS.V_MISSION_RISK_FEATURES
         WHERE (:TARGET_ORBIT IS NULL OR :TARGET_ORBIT = 'NULL' OR :TARGET_ORBIT = '' OR UPPER(target_orbit) = UPPER(:TARGET_ORBIT))
         LIMIT 100
@@ -66,7 +61,7 @@ BEGIN
         high_risk_pct := 0;
     END IF;
 
-    -- Build JSON response (Kratos pattern)
+    -- Build JSON response
     result_json := OBJECT_CONSTRUCT(
         'prediction_source', 'MISSION_RISK_PREDICTOR ML Model',
         'orbit_filter', COALESCE(:TARGET_ORBIT, 'ALL'),
@@ -111,7 +106,7 @@ BEGIN
                 risk_metric,
                 spend_amount,
                 supplier_type
-            ):PREDICTED_QUALITY::INT AS predicted_quality
+            ):QUALITY_LABEL::INT AS predicted_quality
         FROM ROCKET_LAB_INTELLIGENCE.ANALYTICS.V_SUPPLIER_QUALITY_FEATURES
         WHERE (:SUPPLIER_TYPE IS NULL OR :SUPPLIER_TYPE = 'NULL' OR :SUPPLIER_TYPE = '' OR UPPER(supplier_type) = UPPER(:SUPPLIER_TYPE))
         LIMIT 100
@@ -172,7 +167,7 @@ BEGIN
                 cycle_count,
                 age_days,
                 component_type
-            ):PREDICTED_FAILURE::INT AS predicted_failure
+            ):FAILURE_LABEL::INT AS predicted_failure
         FROM ROCKET_LAB_INTELLIGENCE.ANALYTICS.V_COMPONENT_FAILURE_FEATURES
         WHERE (:COMPONENT_TYPE IS NULL OR :COMPONENT_TYPE = 'NULL' OR :COMPONENT_TYPE = '' OR UPPER(component_type) = UPPER(:COMPONENT_TYPE))
         LIMIT 100
@@ -207,9 +202,3 @@ $$;
 
 SELECT 'Model wrapper procedures created successfully' AS status;
 
--- ============================================================================
--- Test Calls
--- ============================================================================
--- CALL PREDICT_MISSION_RISK('LEO');
--- CALL PREDICT_SUPPLIER_QUALITY('ELECTRONICS');
--- CALL PREDICT_COMPONENT_FAILURE('PROPULSION');

@@ -2,9 +2,10 @@
 -- Rocket Lab Intelligence Agent - Semantic Views
 -- ============================================================================
 -- Purpose: Create semantic views for Snowflake Intelligence agents
--- All syntax VERIFIED against Kratos Defense template
+-- All syntax VERIFIED against Kratos Defense template & Lessons Learned
 -- ============================================================================
--- Dimensions/Metrics: <table_alias>.<semantic_name> AS <sql_expression>
+-- CRITICAL RULE: Dimensions/Metrics: <table_alias>.<SEMANTIC_NAME> AS <PHYSICAL_COLUMN>
+-- Example: missions.mission_status AS status (NOT status AS mission_status)
 -- Clause order is MANDATORY: TABLES → RELATIONSHIPS → DIMENSIONS → METRICS → COMMENT
 -- ============================================================================
 
@@ -39,20 +40,20 @@ CREATE OR REPLACE SEMANTIC VIEW SV_MISSION_INTELLIGENCE
     missions.mission_id AS mission_id
       WITH SYNONYMS ('launch id', 'mission identifier')
       COMMENT = 'Unique mission identifier',
-    missions.mission_name AS mission_name
-      WITH SYNONYMS ('launch name', 'mission title')
+    missions.launch_name AS mission_name
+      WITH SYNONYMS ('mission title', 'mission name')
       COMMENT = 'Name of the mission',
-    missions.customer_name AS customer
+    missions.customer AS customer_name
       WITH SYNONYMS ('client', 'payload owner')
       COMMENT = 'Customer organization name',
     missions.launch_site AS launch_site
       WITH SYNONYMS ('launch pad', 'site location')
       COMMENT = 'Launch site location (e.g., Mahia, Wallops)',
-    missions.target_orbit AS orbit
-      WITH SYNONYMS ('trajectory', 'destination orbit')
+    missions.orbit AS target_orbit
+      WITH SYNONYMS ('trajectory', 'destination orbit', 'target orbit')
       COMMENT = 'Target orbit (e.g., LEO, SSO, MEO)',
-    missions.status AS status
-      WITH SYNONYMS ('launch status', 'mission state')
+    missions.mission_status AS status
+      WITH SYNONYMS ('launch status', 'mission state', 'status')
       COMMENT = 'Mission status: SCHEDULED, COMPLETED, DELAYED, CANCELLED',
     missions.launch_date AS launch_date
       WITH SYNONYMS ('launch time', 'mission date')
@@ -62,13 +63,13 @@ CREATE OR REPLACE SEMANTIC VIEW SV_MISSION_INTELLIGENCE
     vehicles.vehicle_id AS vehicle_id
       WITH SYNONYMS ('rocket id', 'vehicle identifier')
       COMMENT = 'Unique vehicle identifier',
-    vehicles.vehicle_name AS vehicle_name
-      WITH SYNONYMS ('rocket name', 'vehicle title')
+    vehicles.rocket_name AS vehicle_name
+      WITH SYNONYMS ('vehicle name', 'rocket title')
       COMMENT = 'Name of the vehicle',
-    vehicles.vehicle_type AS vehicle_type
-      WITH SYNONYMS ('rocket type', 'vehicle class')
+    vehicles.rocket_type AS vehicle_type
+      WITH SYNONYMS ('vehicle type', 'vehicle class')
       COMMENT = 'Type: ELECTRON, NEUTRON, HASTE',
-    vehicles.status AS vehicle_status
+    vehicles.vehicle_status AS status
       WITH SYNONYMS ('rocket status', 'operational status')
       COMMENT = 'Vehicle status: MANUFACTURING, TESTING, READY, LAUNCHED, RETIRED',
     vehicles.serial_number AS serial_number
@@ -85,19 +86,19 @@ CREATE OR REPLACE SEMANTIC VIEW SV_MISSION_INTELLIGENCE
     test_results.test_date AS test_date
       WITH SYNONYMS ('date tested', 'testing date')
       COMMENT = 'Date of test',
-    test_results.status AS test_status
-      WITH SYNONYMS ('test outcome', 'pass fail status')
-      COMMENT = 'Status: PASSED, FAILED, PENDING'
+    test_results.test_status AS result
+      WITH SYNONYMS ('test outcome', 'pass fail status', 'result')
+      COMMENT = 'Status: PASS, FAIL'
   )
   METRICS (
     -- Mission metrics
     missions.total_missions AS COUNT(DISTINCT mission_id)
       WITH SYNONYMS ('mission count', 'launch count')
       COMMENT = 'Total number of missions',
-    missions.contract_value AS SUM(contract_value)
-      WITH SYNONYMS ('total revenue', 'mission revenue')
+    missions.total_revenue AS SUM(contract_value)
+      WITH SYNONYMS ('contract value', 'mission revenue')
       COMMENT = 'Total value of mission contracts',
-    missions.payload_mass AS SUM(payload_mass_kg)
+    missions.total_payload_mass AS SUM(payload_mass_kg)
       WITH SYNONYMS ('total payload', 'mass to orbit')
       COMMENT = 'Total payload mass in kg',
     missions.avg_weather_risk AS AVG(weather_risk_score)
@@ -119,10 +120,10 @@ CREATE OR REPLACE SEMANTIC VIEW SV_MISSION_INTELLIGENCE
     test_results.total_tests AS COUNT(DISTINCT test_id)
       WITH SYNONYMS ('test count', 'number of tests')
       COMMENT = 'Total number of tests performed',
-    test_results.passed_tests AS SUM(CASE WHEN status = 'PASSED' THEN 1 ELSE 0 END)
+    test_results.passed_tests AS SUM(CASE WHEN result = 'PASS' THEN 1 ELSE 0 END)
       WITH SYNONYMS ('successful tests', 'passed count')
       COMMENT = 'Number of tests passed',
-    test_results.failed_tests AS SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END)
+    test_results.failed_tests AS SUM(CASE WHEN result = 'FAIL' THEN 1 ELSE 0 END)
       WITH SYNONYMS ('failed tests', 'failure count')
       COMMENT = 'Number of tests failed'
   )
@@ -150,18 +151,18 @@ CREATE OR REPLACE SEMANTIC VIEW SV_SUPPLIER_COMPONENT_INTELLIGENCE
     suppliers.supplier_id AS supplier_id
       WITH SYNONYMS ('vendor id', 'partner id')
       COMMENT = 'Unique supplier identifier',
-    suppliers.supplier_name AS supplier_name
-      WITH SYNONYMS ('vendor name', 'company name')
+    suppliers.vendor_name AS supplier_name
+      WITH SYNONYMS ('supplier name', 'company name')
       COMMENT = 'Name of supplier',
-    suppliers.supplier_type AS supplier_type
-      WITH SYNONYMS ('vendor type', 'category')
+    suppliers.vendor_type AS supplier_type
+      WITH SYNONYMS ('supplier type', 'category')
       COMMENT = 'Type: RAW_MATERIAL, ELECTRONICS, MACHINING, SERVICES',
     suppliers.country AS country
       WITH SYNONYMS ('location', 'origin')
       COMMENT = 'Supplier country',
-    suppliers.status AS supplier_status
-      WITH SYNONYMS ('vendor status', 'active status')
-      COMMENT = 'Status: ACTIVE, INACTIVE, PROBATION',
+    suppliers.vendor_status AS status
+      WITH SYNONYMS ('supplier status', 'active status')
+      COMMENT = 'Status: ACTIVE, INACTIVE',
 
     -- Component dimensions
     components.component_id AS component_id
@@ -173,9 +174,9 @@ CREATE OR REPLACE SEMANTIC VIEW SV_SUPPLIER_COMPONENT_INTELLIGENCE
     components.component_type AS component_type
       WITH SYNONYMS ('part type', 'category')
       COMMENT = 'Type: AVIONICS, PROPULSION, STRUCTURE, BATTERY',
-    components.status AS component_status
-      WITH SYNONYMS ('part status', 'inventory status')
-      COMMENT = 'Status: IN_STOCK, ON_ORDER, ASSIGNED, SCRAPPED'
+    components.component_status AS status
+      WITH SYNONYMS ('part status', 'inventory status', 'status')
+      COMMENT = 'Status: IN_STOCK, INSTALLED, TESTING, FAILED'
   )
   METRICS (
     -- Supplier metrics
@@ -184,10 +185,10 @@ CREATE OR REPLACE SEMANTIC VIEW SV_SUPPLIER_COMPONENT_INTELLIGENCE
       COMMENT = 'Total number of suppliers',
     suppliers.avg_quality_rating AS AVG(quality_rating)
       WITH SYNONYMS ('average quality', 'vendor quality')
-      COMMENT = 'Average quality rating (0-10)',
+      COMMENT = 'Average quality rating (0-5)',
     suppliers.avg_delivery_rating AS AVG(delivery_rating)
       WITH SYNONYMS ('on time delivery', 'delivery score')
-      COMMENT = 'Average delivery rating (0-10)',
+      COMMENT = 'Average delivery rating (0-5)',
     suppliers.total_spend AS SUM(total_spend)
       WITH SYNONYMS ('procurement spend', 'total cost')
       COMMENT = 'Total spend with suppliers',
@@ -199,9 +200,9 @@ CREATE OR REPLACE SEMANTIC VIEW SV_SUPPLIER_COMPONENT_INTELLIGENCE
     components.total_components AS COUNT(DISTINCT component_id)
       WITH SYNONYMS ('part count', 'inventory count')
       COMMENT = 'Total number of components',
-    components.avg_component_cost AS AVG(cost)
-      WITH SYNONYMS ('average part cost', 'unit cost')
-      COMMENT = 'Average cost per component'
+    components.avg_test_cycles AS AVG(test_cycles)
+      WITH SYNONYMS ('average cycles', 'mean usage')
+      COMMENT = 'Average test cycles per component'
   )
   COMMENT = 'Supplier & Component Intelligence - comprehensive view of supply chain';
 
