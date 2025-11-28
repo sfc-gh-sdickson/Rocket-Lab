@@ -51,7 +51,7 @@ CREATE OR REPLACE SEMANTIC VIEW SV_MISSION_INTELLIGENCE
     missions.target_orbit AS orbit
       WITH SYNONYMS ('trajectory', 'destination orbit')
       COMMENT = 'Target orbit (e.g., LEO, SSO, MEO)',
-    missions.status AS mission_status
+    missions.status AS status
       WITH SYNONYMS ('launch status', 'mission state')
       COMMENT = 'Mission status: SCHEDULED, COMPLETED, DELAYED, CANCELLED',
     missions.launch_date AS launch_date
