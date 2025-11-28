@@ -41,7 +41,7 @@ This solution enables natural language querying and predictive analytics for Roc
    - `sql/search/06_create_cortex_search.sql`
 
 2. **Train ML Models**:
-   - Open `notebooks/rocket_lab_ml_models.ipynb` in Snowflake Notebooks.
+   - Open `notebooks/rocket_lab_training.ipynb` in Snowflake Notebooks.
    - Run all cells to train and register the 3 models.
 
 3. **Deploy Agent Tools**:
