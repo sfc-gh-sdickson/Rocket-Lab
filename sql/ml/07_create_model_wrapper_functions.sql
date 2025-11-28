@@ -14,6 +14,7 @@ USE WAREHOUSE ROCKET_LAB_WH;
 -- 1. Mission Risk Predictor Wrapper
 -- Model: MISSION_RISK_PREDICTOR
 -- Features: Weather, Technical Risk, Payload Mass, Budget (Contract Value)
+-- FIX: Removed target_orbit from PREDICT arguments (used for filtering only)
 -- ============================================================================
 CREATE OR REPLACE PROCEDURE PREDICT_MISSION_RISK(
     TARGET_ORBIT VARCHAR
@@ -39,8 +40,7 @@ BEGIN
                 weather_risk,
                 technical_risk,
                 payload_mass,
-                contract_val,
-                target_orbit
+                contract_val
             ):RISK_LABEL::INT AS predicted_risk
         FROM ROCKET_LAB_INTELLIGENCE.ANALYTICS.V_MISSION_RISK_FEATURES
         WHERE (:TARGET_ORBIT IS NULL OR :TARGET_ORBIT = 'NULL' OR :TARGET_ORBIT = '' OR UPPER(target_orbit) = UPPER(:TARGET_ORBIT))
@@ -80,6 +80,7 @@ $$;
 -- 2. Supplier Quality Predictor Wrapper
 -- Model: SUPPLIER_QUALITY_PREDICTOR
 -- Features: Ratings, Risk Score, Spend
+-- FIX: Removed supplier_type from PREDICT arguments
 -- ============================================================================
 CREATE OR REPLACE PROCEDURE PREDICT_SUPPLIER_QUALITY(
     SUPPLIER_TYPE VARCHAR
@@ -104,8 +105,7 @@ BEGIN
                 quality_score,
                 delivery_score,
                 risk_metric,
-                spend_amount,
-                supplier_type
+                spend_amount
             ):QUALITY_LABEL::INT AS predicted_quality
         FROM ROCKET_LAB_INTELLIGENCE.ANALYTICS.V_SUPPLIER_QUALITY_FEATURES
         WHERE (:SUPPLIER_TYPE IS NULL OR :SUPPLIER_TYPE = 'NULL' OR :SUPPLIER_TYPE = '' OR UPPER(supplier_type) = UPPER(:SUPPLIER_TYPE))
@@ -143,6 +143,7 @@ $$;
 -- 3. Component Failure Predictor Wrapper
 -- Model: COMPONENT_FAILURE_PREDICTOR
 -- Features: Test Cycles, Age
+-- FIX: Removed component_type from PREDICT arguments
 -- ============================================================================
 CREATE OR REPLACE PROCEDURE PREDICT_COMPONENT_FAILURE(
     COMPONENT_TYPE VARCHAR
@@ -165,8 +166,7 @@ BEGIN
             cycle_count,
             m!PREDICT(
                 cycle_count,
-                age_days,
-                component_type
+                age_days
             ):FAILURE_LABEL::INT AS predicted_failure
         FROM ROCKET_LAB_INTELLIGENCE.ANALYTICS.V_COMPONENT_FAILURE_FEATURES
         WHERE (:COMPONENT_TYPE IS NULL OR :COMPONENT_TYPE = 'NULL' OR :COMPONENT_TYPE = '' OR UPPER(component_type) = UPPER(:COMPONENT_TYPE))
@@ -201,4 +201,3 @@ END;
 $$;
 
 SELECT 'Model wrapper procedures created successfully' AS status;
-
