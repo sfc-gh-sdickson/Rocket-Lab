@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shLg">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="720" fill="#ffffff"/>
+  <text x="600" y="36" text-anchor="middle" fill="#1a1a2e" font-size="22" font-weight="bold">Agent Tool Decision</text>
+  <text x="600" y="56" text-anchor="middle" fill="#666" font-size="12">ROCKET_LAB_AGENT | 31 tools | pick one path, then call the named tool</text>
+
+  <rect x="350" y="78" width="500" height="52" rx="10" fill="#e8530e" filter="url(#shLg)"/>
+  <text x="600" y="110" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">What is the user asking?</text>
+
+  <line x1="450" y1="130" x2="160" y2="168" stroke="#29b5e8" stroke-width="1.5"/>
+  <line x1="540" y1="130" x2="450" y2="168" stroke="#00a843" stroke-width="1.5"/>
+  <line x1="660" y1="130" x2="750" y2="168" stroke="#e8530e" stroke-width="1.5"/>
+  <line x1="750" y1="130" x2="1040" y2="168" stroke="#7b61ff" stroke-width="1.5"/>
+
+  <rect x="20" y="175" width="280" height="250" rx="10" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="160" y="202" text-anchor="middle" fill="#0e7fad" font-size="13" font-weight="bold">Numbers and trends</text>
+  <text x="160" y="222" text-anchor="middle" fill="#29b5e8" font-size="11">Cortex Analyst</text>
+  <line x1="36" y1="234" x2="284" y2="234" stroke="#b3e5fc" stroke-width="1"/>
+  <text x="36" y="256" fill="#444" font-size="11">Success rate, ARR, SLA %</text>
+  <text x="36" y="276" fill="#444" font-size="11">RL_MISSIONS_SV</text>
+  <text x="36" y="296" fill="#444" font-size="11">RL_CUSTOMER_360_SV</text>
+  <text x="36" y="316" fill="#444" font-size="11">RL_REVENUE_SV, RL_SUPPORT_SV</text>
+  <text x="36" y="336" fill="#444" font-size="11">RL_PIPELINE_SV</text>
+  <text x="36" y="356" fill="#444" font-size="11">RL_ENGINE_TELEMETRY_SV</text>
+  <text x="36" y="380" fill="#666" font-size="10">Example: success rate by vehicle</text>
+  <text x="36" y="400" fill="#666" font-size="10">Example: ARR by segment</text>
+
+  <rect x="316" y="175" width="270" height="250" rx="10" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="451" y="202" text-anchor="middle" fill="#007a31" font-size="13" font-weight="bold">Find the wording</text>
+  <text x="451" y="222" text-anchor="middle" fill="#00a843" font-size="11">Cortex Search</text>
+  <line x1="332" y1="234" x2="570" y2="234" stroke="#b9f6ca" stroke-width="1"/>
+  <text x="332" y="256" fill="#444" font-size="11">Playbook, anomaly text</text>
+  <text x="332" y="276" fill="#444" font-size="11">RL_KNOWLEDGE_SEARCH</text>
+  <text x="332" y="296" fill="#444" font-size="11">RL_ANOMALY_SEARCH</text>
+  <text x="332" y="316" fill="#444" font-size="11">RL_MISSION_DOCUMENT_SEARCH</text>
+  <text x="332" y="336" fill="#444" font-size="11">RL_TEST_FAILURE_SEARCH</text>
+  <text x="332" y="356" fill="#007a31" font-size="11" font-weight="bold">RL_INTERACTION_SEARCH</text>
+  <text x="332" y="380" fill="#666" font-size="10">Tickets and NPS verbatims</text>
+  <text x="332" y="400" fill="#666" font-size="10">use the feedback searches</text>
+
+  <rect x="602" y="175" width="290" height="250" rx="10" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="747" y="202" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">A known brief</text>
+  <text x="747" y="222" text-anchor="middle" fill="#e8530e" font-size="11">Custom UDFs</text>
+  <line x1="618" y1="234" x2="876" y2="234" stroke="#ffd4bf" stroke-width="1"/>
+  <text x="618" y="256" fill="#444" font-size="11">One account: GetCustomer360</text>
+  <text x="618" y="276" fill="#444" font-size="11">At risk: GetChurnRiskList</text>
+  <text x="618" y="296" fill="#444" font-size="11">Growth: GetExpansionOpportunities</text>
+  <text x="618" y="316" fill="#444" font-size="11">Renewals: GetRenewalCalendar</text>
+  <text x="618" y="336" fill="#444" font-size="11">Portfolio: GetAccountHealthSummary</text>
+  <text x="618" y="356" fill="#444" font-size="11">Fleet: GetFleetHealth, GetRulEstimates</text>
+  <text x="618" y="380" fill="#666" font-size="10">Cadence: GetMissionSummary</text>
+  <text x="618" y="400" fill="#666" font-size="10">Parts: GetComponentsAtRisk</text>
+
+  <rect x="908" y="175" width="272" height="250" rx="10" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1044" y="202" text-anchor="middle" fill="#5a3ec8" font-size="13" font-weight="bold">A prediction</text>
+  <text x="1044" y="222" text-anchor="middle" fill="#7b61ff" font-size="11">Model scores</text>
+  <line x1="924" y1="234" x2="1164" y2="234" stroke="#d4c8ff" stroke-width="1"/>
+  <text x="924" y="256" fill="#444" font-size="11">Churn tier and probability</text>
+  <text x="924" y="276" fill="#444" font-size="11">Health score 0-100</text>
+  <text x="924" y="296" fill="#444" font-size="11">Expansion propensity</text>
+  <text x="924" y="316" fill="#444" font-size="11">Component fail / RUL</text>
+  <text x="924" y="340" fill="#666" font-size="10">Read CUSTOMER_ML_SCORES</text>
+  <text x="924" y="360" fill="#666" font-size="10">via CUSTOMER_360 or the</text>
+  <text x="924" y="380" fill="#666" font-size="10">churn and expansion UDFs.</text>
+  <text x="924" y="404" fill="#888" font-size="10">Do not retrain in the agent.</text>
+
+  <rect x="80" y="460" width="1040" height="180" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <text x="600" y="488" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="bold">Multi-tool example: brief this customer before the QBR</text>
+
+  <rect x="100" y="508" width="220" height="100" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="210" y="540" text-anchor="middle" fill="#b33f08" font-size="12" font-weight="bold">1. Account brief</text>
+  <text x="210" y="562" text-anchor="middle" fill="#555" font-size="10">AGENT_GET_CUSTOMER_360</text>
+  <text x="210" y="582" text-anchor="middle" fill="#888" font-size="10">ARR, health, churn tier</text>
+
+  <line x1="320" y1="558" x2="368" y2="558" stroke="#e8530e" stroke-width="1.5"/>
+  <polygon points="366,554 376,558 366,562" fill="#e8530e"/>
+
+  <rect x="380" y="508" width="240" height="100" rx="8" fill="#fff" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="500" y="540" text-anchor="middle" fill="#007a31" font-size="12" font-weight="bold">2. What they said</text>
+  <text x="500" y="562" text-anchor="middle" fill="#555" font-size="10">InteractionSearch</text>
+  <text x="500" y="582" text-anchor="middle" fill="#888" font-size="10">Plus ticket and NPS search</text>
+
+  <line x1="620" y1="558" x2="668" y2="558" stroke="#29b5e8" stroke-width="1.5"/>
+  <polygon points="666,554 676,558 666,562" fill="#29b5e8"/>
+
+  <rect x="680" y="508" width="400" height="100" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="880" y="540" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">3. The numbers behind it</text>
+  <text x="880" y="562" text-anchor="middle" fill="#555" font-size="10">Customer360Analytics or SupportAnalytics</text>
+  <text x="880" y="582" text-anchor="middle" fill="#888" font-size="10">Only if the brief needs a chart or a filter</text>
+
+  <text x="600" y="680" text-anchor="middle" fill="#999" font-size="11">Verified path: scripts/test_agent.py — 10/10 questions routed and answered on AWS161</text>
+  <text x="600" y="700" text-anchor="middle" fill="#aaa" font-size="10">Empty churn or expansion answers mean scores were wiped. Rerun notebooks/07_ml_models.py.</text>
+</svg>

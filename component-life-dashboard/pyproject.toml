@@ -1,0 +1,8 @@
+[project]
+name = "rocket-lab-component-life"
+requires-python = ">= 3.11"
+version = "0.0.1"
+description = "Remaining useful life of Rocket Lab flight hardware"
+dependencies = [
+    "streamlit[snowflake]>=1.54.0"
+]

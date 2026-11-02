@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shLg">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1100" height="680" fill="#ffffff"/>
+  <text x="550" y="36" text-anchor="middle" fill="#1a1a2e" font-size="22" font-weight="bold">Customer 360</text>
+  <text x="550" y="56" text-anchor="middle" fill="#666" font-size="12">ANALYTICS.CUSTOMER_360 | 100 rows | one account, every signal</text>
+
+  <rect x="360" y="80" width="380" height="80" rx="12" fill="#e8530e" filter="url(#shLg)"/>
+  <text x="550" y="112" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">CUSTOMER_360</text>
+  <text x="550" y="134" text-anchor="middle" fill="#ffe0cc" font-size="11">Hidden profile drives every domain together</text>
+  <text x="550" y="150" text-anchor="middle" fill="#ffe0cc" font-size="10">Healthy 60% | Expanding 20% | At risk 10% | Churned 10%</text>
+
+  <line x1="430" y1="160" x2="160" y2="210" stroke="#29b5e8" stroke-width="1.5"/>
+  <line x1="500" y1="160" x2="400" y2="210" stroke="#00a843" stroke-width="1.5"/>
+  <line x1="600" y1="160" x2="700" y2="210" stroke="#e8530e" stroke-width="1.5"/>
+  <line x1="670" y1="160" x2="940" y2="210" stroke="#7b61ff" stroke-width="1.5"/>
+
+  <rect x="30" y="215" width="250" height="170" rx="10" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="155" y="242" text-anchor="middle" fill="#0e7fad" font-size="13" font-weight="bold">Launch book</text>
+  <text x="155" y="268" text-anchor="middle" fill="#555" font-size="11">300 missions</text>
+  <text x="155" y="290" text-anchor="middle" fill="#555" font-size="11">87.5% success rate</text>
+  <text x="155" y="312" text-anchor="middle" fill="#555" font-size="11">34 boosters recovered</text>
+  <text x="155" y="334" text-anchor="middle" fill="#555" font-size="11">50 recovery attempts</text>
+  <text x="155" y="360" text-anchor="middle" fill="#888" font-size="10">Electron and Neutron</text>
+
+  <rect x="300" y="215" width="250" height="170" rx="10" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="425" y="242" text-anchor="middle" fill="#007a31" font-size="13" font-weight="bold">Commercial</text>
+  <text x="425" y="268" text-anchor="middle" fill="#555" font-size="11">219 contracts</text>
+  <text x="425" y="290" text-anchor="middle" fill="#555" font-size="11">1,995 invoices</text>
+  <text x="425" y="312" text-anchor="middle" fill="#555" font-size="11">Active ARR on the account</text>
+  <text x="425" y="334" text-anchor="middle" fill="#555" font-size="11">Renewal date and term</text>
+  <text x="425" y="360" text-anchor="middle" fill="#888" font-size="10">Late pay follows the profile</text>
+
+  <rect x="570" y="215" width="250" height="170" rx="10" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="695" y="242" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">Experience</text>
+  <text x="695" y="268" text-anchor="middle" fill="#555" font-size="11">1,807 support tickets</text>
+  <text x="695" y="290" text-anchor="middle" fill="#555" font-size="11">1,200 NPS / CSAT surveys</text>
+  <text x="695" y="312" text-anchor="middle" fill="#555" font-size="11">36,500 usage days</text>
+  <text x="695" y="334" text-anchor="middle" fill="#555" font-size="11">1,916 interaction notes</text>
+  <text x="695" y="360" text-anchor="middle" fill="#888" font-size="10">SLA, cadence, sentiment</text>
+
+  <rect x="840" y="215" width="230" height="170" rx="10" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="955" y="242" text-anchor="middle" fill="#5a3ec8" font-size="13" font-weight="bold">ML scores</text>
+  <text x="955" y="268" text-anchor="middle" fill="#555" font-size="11">Churn tier and probability</text>
+  <text x="955" y="290" text-anchor="middle" fill="#555" font-size="11">Health score</text>
+  <text x="955" y="312" text-anchor="middle" fill="#555" font-size="11">Expansion propensity</text>
+  <text x="955" y="334" text-anchor="middle" fill="#555" font-size="11">35 high-churn accounts</text>
+  <text x="955" y="360" text-anchor="middle" fill="#888" font-size="10">$765.2M ARR at risk</text>
+
+  <rect x="80" y="430" width="940" height="160" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <text x="550" y="458" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="bold">Why the stories agree</text>
+  <text x="550" y="486" text-anchor="middle" fill="#555" font-size="12">An at-risk account shows falling cadence, detractor NPS, SLA misses,</text>
+  <text x="550" y="508" text-anchor="middle" fill="#555" font-size="12">late invoices and negative call notes at the same time.</text>
+  <text x="550" y="536" text-anchor="middle" fill="#555" font-size="12">An expanding account shows the opposite, plus open opportunities (324).</text>
+  <text x="550" y="564" text-anchor="middle" fill="#888" font-size="11">The profile is not a column on CUSTOMERS. It only exists in the generator.</text>
+
+  <text x="550" y="630" text-anchor="middle" fill="#999" font-size="11">Agent entry: AGENT_GET_CUSTOMER_360, AGENT_GET_CHURN_RISK_LIST, RL_CUSTOMER_360_SV</text>
+  <text x="550" y="652" text-anchor="middle" fill="#aaa" font-size="10">Scores are empty until notebooks/07_ml_models.py has been run after the latest data load.</text>
+</svg>

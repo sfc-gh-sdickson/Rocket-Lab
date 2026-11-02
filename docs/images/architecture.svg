@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 980" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shLg">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="980" fill="#ffffff"/>
+  <text x="600" y="40" text-anchor="middle" fill="#1a1a2e" font-size="26" font-weight="bold">Rocket Lab Intelligence Agent Architecture</text>
+  <text x="600" y="65" text-anchor="middle" fill="#666" font-size="13">Snowflake Intelligence + Cortex AI | Launch Ops + Customer 360</text>
+
+  <rect x="350" y="85" width="500" height="50" rx="10" fill="#29b5e8" filter="url(#sh)"/>
+  <text x="600" y="116" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Users: Launch Ops, Mission Assurance, CSMs, Sales</text>
+
+  <line x1="600" y1="135" x2="600" y2="165" stroke="#29b5e8" stroke-width="2"/>
+  <polygon points="596,163 604,163 600,173" fill="#29b5e8"/>
+
+  <rect x="300" y="175" width="600" height="65" rx="12" fill="#e8530e" filter="url(#shLg)"/>
+  <text x="600" y="202" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">ROCKET_LAB_AGENT</text>
+  <text x="600" y="224" text-anchor="middle" fill="#ffe0cc" font-size="12">Snowflake Intelligence Agent | 31 Tools | Natural Language</text>
+
+  <line x1="430" y1="240" x2="160" y2="275" stroke="#29b5e8" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="530" y1="240" x2="450" y2="275" stroke="#00a843" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="670" y1="240" x2="740" y2="275" stroke="#e8530e" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="770" y1="240" x2="1040" y2="275" stroke="#7b61ff" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <rect x="20" y="275" width="280" height="268" rx="10" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="160" y="298" text-anchor="middle" fill="#0e7fad" font-size="14" font-weight="bold">Cortex Analyst (12)</text>
+  <text x="160" y="316" text-anchor="middle" fill="#29b5e8" font-size="11">Text-to-SQL | Semantic Views</text>
+  <line x1="30" y1="326" x2="290" y2="326" stroke="#b3e5fc" stroke-width="1"/>
+  <text x="35" y="344" fill="#444" font-size="10">RL_FLEET_SV</text>
+  <text x="35" y="360" fill="#444" font-size="10">RL_MISSIONS_SV</text>
+  <text x="35" y="376" fill="#444" font-size="10">RL_ENGINE_TELEMETRY_SV</text>
+  <text x="35" y="392" fill="#444" font-size="10">RL_COMPONENT_HEALTH_SV</text>
+  <text x="35" y="408" fill="#444" font-size="10">RL_MAINTENANCE_SV</text>
+  <text x="35" y="424" fill="#444" font-size="10">RL_ANOMALIES_SV</text>
+  <text x="35" y="440" fill="#444" font-size="10">RL_SUPPLIER_QUALITY_SV</text>
+  <text x="35" y="460" fill="#0e7fad" font-size="10" font-weight="bold">RL_CUSTOMER_360_SV</text>
+  <text x="35" y="476" fill="#0e7fad" font-size="10" font-weight="bold">RL_REVENUE_SV</text>
+  <text x="35" y="492" fill="#0e7fad" font-size="10" font-weight="bold">RL_SUPPORT_SV</text>
+  <text x="35" y="508" fill="#0e7fad" font-size="10" font-weight="bold">RL_PIPELINE_SV</text>
+  <text x="35" y="524" fill="#0e7fad" font-size="10" font-weight="bold">RL_MISSION_OPS_SV</text>
+
+  <rect x="320" y="275" width="260" height="268" rx="10" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="450" y="298" text-anchor="middle" fill="#007a31" font-size="14" font-weight="bold">Cortex Search (8)</text>
+  <text x="450" y="316" text-anchor="middle" fill="#00a843" font-size="11">RAG | Semantic Search</text>
+  <line x1="330" y1="326" x2="570" y2="326" stroke="#b9f6ca" stroke-width="1"/>
+  <text x="335" y="344" fill="#444" font-size="10">RL_KNOWLEDGE_SEARCH</text>
+  <text x="335" y="360" fill="#444" font-size="10">RL_MAINTENANCE_SEARCH</text>
+  <text x="335" y="376" fill="#444" font-size="10">RL_ANOMALY_SEARCH</text>
+  <text x="335" y="392" fill="#444" font-size="10">RL_MISSION_DOCUMENT_SEARCH</text>
+  <text x="335" y="408" fill="#444" font-size="10">RL_TEST_FAILURE_SEARCH</text>
+  <text x="335" y="428" fill="#007a31" font-size="10" font-weight="bold">RL_INTERACTION_SEARCH</text>
+  <text x="335" y="444" fill="#007a31" font-size="10" font-weight="bold">RL_SUPPORT_TICKET_SEARCH</text>
+  <text x="335" y="460" fill="#007a31" font-size="10" font-weight="bold">RL_CUSTOMER_FEEDBACK_SEARCH</text>
+  <line x1="330" y1="478" x2="570" y2="478" stroke="#b9f6ca" stroke-width="0.5"/>
+  <text x="335" y="496" fill="#666" font-size="10">Playbooks, maintenance, anomalies</text>
+  <text x="335" y="512" fill="#666" font-size="10">Mission docs, test failures</text>
+  <text x="335" y="528" fill="#666" font-size="10">QBR notes, tickets, verbatims</text>
+
+  <rect x="600" y="275" width="280" height="268" rx="10" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="740" y="298" text-anchor="middle" fill="#b33f08" font-size="14" font-weight="bold">Custom Tools (11 UDFs)</text>
+  <text x="740" y="316" text-anchor="middle" fill="#e8530e" font-size="11">All names are AGENT_*</text>
+  <line x1="610" y1="326" x2="870" y2="326" stroke="#ffd4bf" stroke-width="1"/>
+  <text x="615" y="344" fill="#444" font-size="10">GET_FLEET_HEALTH</text>
+  <text x="615" y="359" fill="#444" font-size="10">GET_MISSION_SUMMARY</text>
+  <text x="615" y="374" fill="#444" font-size="10">GET_COMPONENTS_AT_RISK</text>
+  <text x="615" y="389" fill="#444" font-size="10">GET_MAINTENANCE_COST_SUMMARY</text>
+  <text x="615" y="404" fill="#444" font-size="10">GET_ANOMALY_REPORT</text>
+  <text x="615" y="419" fill="#444" font-size="10">GET_RUL_ESTIMATES</text>
+  <text x="615" y="438" fill="#b33f08" font-size="10" font-weight="bold">GET_CUSTOMER_360</text>
+  <text x="615" y="453" fill="#b33f08" font-size="10" font-weight="bold">GET_CHURN_RISK_LIST</text>
+  <text x="615" y="468" fill="#b33f08" font-size="10" font-weight="bold">GET_EXPANSION_OPPORTUNITIES</text>
+  <text x="615" y="483" fill="#b33f08" font-size="10" font-weight="bold">GET_RENEWAL_CALENDAR</text>
+  <text x="615" y="498" fill="#b33f08" font-size="10" font-weight="bold">GET_ACCOUNT_HEALTH_SUMMARY</text>
+  <text x="615" y="522" fill="#888" font-size="10">Scores from CUSTOMER_ML_SCORES</text>
+
+  <rect x="900" y="275" width="280" height="268" rx="10" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1040" y="298" text-anchor="middle" fill="#5a3ec8" font-size="14" font-weight="bold">ML Model Registry (5)</text>
+  <text x="1040" y="316" text-anchor="middle" fill="#7b61ff" font-size="11">ROCKET_LAB_INTELLIGENCE.ML</text>
+  <line x1="910" y1="326" x2="1170" y2="326" stroke="#d4c8ff" stroke-width="1"/>
+  <text x="915" y="346" fill="#444" font-size="10">RL_PREDICTIVE_MAINTENANCE</text>
+  <text x="915" y="362" fill="#444" font-size="10">RL_REMAINING_USEFUL_LIFE</text>
+  <text x="915" y="382" fill="#5a3ec8" font-size="10" font-weight="bold">RL_CHURN_RISK</text>
+  <text x="915" y="398" fill="#5a3ec8" font-size="10" font-weight="bold">RL_CUSTOMER_HEALTH_SCORE</text>
+  <text x="915" y="414" fill="#5a3ec8" font-size="10" font-weight="bold">RL_EXPANSION_PROPENSITY</text>
+  <line x1="910" y1="430" x2="1170" y2="430" stroke="#d4c8ff" stroke-width="0.5"/>
+  <text x="915" y="450" fill="#666" font-size="10">Maint ROC AUC 0.981</text>
+  <text x="915" y="466" fill="#666" font-size="10">RUL MAE 9.5 cycles, R2 0.971</text>
+  <text x="915" y="482" fill="#666" font-size="10">Churn and expansion AUC 1.000</text>
+  <text x="915" y="498" fill="#666" font-size="10">Health MAE 2.13, R2 0.928</text>
+  <text x="915" y="522" fill="#888" font-size="10">100 scores in CUSTOMER_ML_SCORES</text>
+
+  <rect x="15" y="568" width="1170" height="330" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <text x="600" y="594" text-anchor="middle" fill="#1a1a2e" font-size="14" font-weight="bold">DATA LAYER: ROCKET_LAB_INTELLIGENCE.RAW</text>
+
+  <text x="30" y="618" fill="#555" font-size="10" font-weight="bold">LAUNCH OPERATIONS</text>
+  <rect x="30" y="626" width="180" height="75" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="120" y="648" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">VEHICLES</text>
+  <text x="120" y="668" text-anchor="middle" fill="#555" font-size="10">100 Electron and Neutron</text>
+  <text x="120" y="683" text-anchor="middle" fill="#555" font-size="10">Launch Sites</text>
+  <rect x="222" y="626" width="180" height="75" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="312" y="648" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">ENGINE TELEMETRY</text>
+  <text x="312" y="668" text-anchor="middle" fill="#555" font-size="10">150,000 Readings</text>
+  <text x="312" y="683" text-anchor="middle" fill="#555" font-size="10">Rutherford and Archimedes</text>
+  <rect x="414" y="626" width="180" height="75" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="504" y="648" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">COMPONENTS</text>
+  <text x="504" y="668" text-anchor="middle" fill="#555" font-size="10">5,000 Parts</text>
+  <text x="504" y="683" text-anchor="middle" fill="#555" font-size="10">Wear, Status, RUL</text>
+  <rect x="606" y="626" width="180" height="75" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="696" y="648" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">MAINTENANCE</text>
+  <text x="696" y="668" text-anchor="middle" fill="#555" font-size="10">6,000 Service Records</text>
+  <text x="696" y="683" text-anchor="middle" fill="#555" font-size="10">Costs, Parts, Techs</text>
+  <rect x="798" y="626" width="180" height="75" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="888" y="648" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">ANOMALIES</text>
+  <text x="888" y="668" text-anchor="middle" fill="#555" font-size="10">753 Anomalies</text>
+  <text x="888" y="683" text-anchor="middle" fill="#555" font-size="10">Severity, Root Cause</text>
+  <rect x="990" y="626" width="180" height="75" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1080" y="648" text-anchor="middle" fill="#0e7fad" font-size="12" font-weight="bold">TESTS AND DOCS</text>
+  <text x="1080" y="668" text-anchor="middle" fill="#555" font-size="10">20,000 Tests, 150 Docs</text>
+  <text x="1080" y="683" text-anchor="middle" fill="#555" font-size="10">765 Failure Reports</text>
+
+  <text x="30" y="724" fill="#b33f08" font-size="10" font-weight="bold">CUSTOMER 360</text>
+  <rect x="30" y="732" width="180" height="75" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="120" y="754" text-anchor="middle" fill="#b33f08" font-size="12" font-weight="bold">CUSTOMERS</text>
+  <text x="120" y="774" text-anchor="middle" fill="#555" font-size="10">100 Accounts, 300 Missions</text>
+  <text x="120" y="789" text-anchor="middle" fill="#555" font-size="10">Contacts and Manifests</text>
+  <rect x="222" y="732" width="180" height="75" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="312" y="754" text-anchor="middle" fill="#b33f08" font-size="12" font-weight="bold">CONTRACTS</text>
+  <text x="312" y="774" text-anchor="middle" fill="#555" font-size="10">219 Contracts, ARR</text>
+  <text x="312" y="789" text-anchor="middle" fill="#555" font-size="10">1,995 Invoices</text>
+  <rect x="414" y="732" width="180" height="75" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="504" y="754" text-anchor="middle" fill="#b33f08" font-size="12" font-weight="bold">SUPPORT TICKETS</text>
+  <text x="504" y="774" text-anchor="middle" fill="#555" font-size="10">1,807 Tickets</text>
+  <text x="504" y="789" text-anchor="middle" fill="#555" font-size="10">Priority, SLA, CSAT</text>
+  <rect x="606" y="732" width="180" height="75" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="696" y="754" text-anchor="middle" fill="#b33f08" font-size="12" font-weight="bold">SURVEYS</text>
+  <text x="696" y="774" text-anchor="middle" fill="#555" font-size="10">1,200 NPS / CSAT</text>
+  <text x="696" y="789" text-anchor="middle" fill="#555" font-size="10">Verbatim Comments</text>
+  <rect x="798" y="732" width="180" height="75" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="888" y="754" text-anchor="middle" fill="#b33f08" font-size="12" font-weight="bold">MISSION USAGE</text>
+  <text x="888" y="774" text-anchor="middle" fill="#555" font-size="10">36,500 Customer-Days</text>
+  <text x="888" y="789" text-anchor="middle" fill="#555" font-size="10">Cadence, Range Time</text>
+  <rect x="990" y="732" width="180" height="75" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1080" y="754" text-anchor="middle" fill="#b33f08" font-size="12" font-weight="bold">PIPELINE AND NOTES</text>
+  <text x="1080" y="774" text-anchor="middle" fill="#555" font-size="10">324 Opportunities</text>
+  <text x="1080" y="789" text-anchor="middle" fill="#555" font-size="10">1,916 Interactions</text>
+
+  <text x="600" y="832" text-anchor="middle" fill="#555" font-size="10" font-weight="bold">ANALYTICAL VIEWS (ROCKET_LAB_INTELLIGENCE.ANALYTICS) — 15 VIEWS</text>
+  <rect x="28" y="844" width="136" height="30" rx="6" fill="#fff" stroke="#29b5e8" stroke-width="1" filter="url(#sh)"/>
+  <text x="96" y="864" text-anchor="middle" fill="#0e7fad" font-size="10">Launch Overview</text>
+  <rect x="172" y="844" width="136" height="30" rx="6" fill="#fff" stroke="#29b5e8" stroke-width="1" filter="url(#sh)"/>
+  <text x="240" y="864" text-anchor="middle" fill="#0e7fad" font-size="10">Telemetry Daily</text>
+  <rect x="316" y="844" width="136" height="30" rx="6" fill="#fff" stroke="#29b5e8" stroke-width="1" filter="url(#sh)"/>
+  <text x="384" y="864" text-anchor="middle" fill="#0e7fad" font-size="10">Component Health</text>
+  <rect x="460" y="844" width="136" height="30" rx="6" fill="#fff" stroke="#29b5e8" stroke-width="1" filter="url(#sh)"/>
+  <text x="528" y="864" text-anchor="middle" fill="#0e7fad" font-size="10">Anomalies + Tests</text>
+  <rect x="604" y="844" width="136" height="30" rx="6" fill="#fff" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="672" y="864" text-anchor="middle" fill="#b33f08" font-size="10">Customer 360</text>
+  <rect x="748" y="844" width="136" height="30" rx="6" fill="#fff" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="816" y="864" text-anchor="middle" fill="#b33f08" font-size="10">Revenue + Usage</text>
+  <rect x="892" y="844" width="136" height="30" rx="6" fill="#fff" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="960" y="864" text-anchor="middle" fill="#b33f08" font-size="10">Pipeline + Support</text>
+  <rect x="1036" y="844" width="136" height="30" rx="6" fill="#fff" stroke="#7b61ff" stroke-width="1" filter="url(#sh)"/>
+  <text x="1104" y="864" text-anchor="middle" fill="#5a3ec8" font-size="10">ML Feature Snapshots</text>
+
+  <text x="600" y="910" text-anchor="middle" fill="#999" font-size="11">Rocket Lab | Snowflake Intelligence | Electron and Neutron | 100 Customers | 87.5% Success</text>
+  <text x="600" y="930" text-anchor="middle" fill="#aaa" font-size="10">Powered by Snowflake Cortex Agent + Cortex Analyst + Cortex Search + Snowflake Model Registry</text>
+  <text x="600" y="950" text-anchor="middle" fill="#bbb" font-size="10">High churn: 35 customers | ARR at risk: $765.2M | Recovered boosters: 34 of 50 attempts</text>
+</svg>
