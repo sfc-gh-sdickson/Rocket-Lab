@@ -1,4 +1,12 @@
-<img src="Snowflake_Logo.svg" width="200">
+<style>
+body, .vscode-body, .markdown-body {
+	background-color: #ffffff !important;
+	color: #111111;
+	color-scheme: light;
+}
+</style>
+
+<img src="Rocket_Lab_Logo.svg" width="280">
 
 # Rocket Lab — Snowflake Intelligence Agent
 
