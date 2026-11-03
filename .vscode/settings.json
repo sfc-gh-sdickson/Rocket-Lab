@@ -1,0 +1,10 @@
+{
+  "workbench.colorCustomizations": {
+    "[*]": {
+      "editor.background": "#ffffff",
+      "editor.foreground": "#111111",
+      "sideBar.background": "#ffffff"
+    }
+  },
+  "markdown.preview.background": "#ffffff"
+}
