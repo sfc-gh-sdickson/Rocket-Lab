@@ -95,6 +95,6 @@
   <text x="880" y="562" text-anchor="middle" fill="#555" font-size="10">Customer360Analytics or SupportAnalytics</text>
   <text x="880" y="582" text-anchor="middle" fill="#888" font-size="10">Only if the brief needs a chart or a filter</text>
 
-  <text x="600" y="680" text-anchor="middle" fill="#999" font-size="11">Verified path: scripts/test_agent.py — 10/10 questions routed and answered on AWS161</text>
+  <text x="600" y="680" text-anchor="middle" fill="#999" font-size="11">Verified path: scripts/test_agent.py - 10/10 questions routed and answered on AWS161</text>
   <text x="600" y="700" text-anchor="middle" fill="#aaa" font-size="10">Empty churn or expansion answers mean scores were wiped. Rerun notebooks/07_ml_models.py.</text>
 </svg>

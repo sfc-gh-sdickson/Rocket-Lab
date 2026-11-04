@@ -60,6 +60,20 @@ The brief should include ARR, churn tier, health score and days to renewal, and 
 30. Which segment has the worst SLA over the last 90 days?
 31. Where is mission-operations usage falling quarter over quarter?
 
+## Charts
+
+These are sample questions on the agent. Each one should come back with the chart it names, plus the numbers behind it.
+
+32. Chart launch success rate by vehicle type as a bar chart.
+33. Show monthly maintenance cost by vehicle type as a line chart.
+34. Draw a pie chart of open anomalies by severity.
+35. Scatter nozzle temperature against chamber pressure for recent engine tests.
+36. Show active ARR by customer segment as an area chart.
+37. Table the launch sites with success rate, missions flown and recovered boosters.
+38. What does the knowledge base say about a Rutherford hot-fire abort?
+
+Question 38 is a document lookup, not a chart. It should use `KnowledgeSearch`.
+
 Expected anchors: 35 high-churn customers, $765.2M ARR on those accounts, 100 score rows, 324 opportunities, 1,200 surveys, 1,807 tickets.
 
 ## What a bad answer looks like
