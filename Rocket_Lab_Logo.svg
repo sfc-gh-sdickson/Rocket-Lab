@@ -31,12 +31,12 @@
 			95.4%, 100% { opacity: 0; }
 		}
 		@keyframes blastoff {
-			0%, 71% { transform: translate(186px, 409px) scale(0.32); }
-			74%, 84% { transform: translate(186px, 409px) scale(0.32); }
-			86% { transform: translate(186px, 340px) scale(0.32); }
-			92% { transform: translate(186px, -300px) scale(0.32); }
-			95.3% { transform: translate(186px, -300px) scale(0.32); }
-			95.4%, 100% { transform: translate(186px, 409px) scale(0.32); }
+			0%, 71% { transform: translate(186px, 409px) scale(0.426); }
+			74%, 84% { transform: translate(186px, 409px) scale(0.426); }
+			86% { transform: translate(186px, 340px) scale(0.426); }
+			92% { transform: translate(186px, -300px) scale(0.426); }
+			95.3% { transform: translate(186px, -300px) scale(0.426); }
+			95.4%, 100% { transform: translate(186px, 409px) scale(0.426); }
 		}
 		@keyframes ignition {
 			0%, 84% { opacity: 0; }
@@ -57,6 +57,8 @@
 				<path fill="#ffd84a" d="M-10 6c-5 16 4 58 10 82 3-26 6-58 10-82-5 16-15 16-20 0z"/>
 				<path fill="#fff6c2" d="M-6 8c-3 10 2 36 6 50 2-16 3-36 6-50-3 10-9 10-12 0z"/>
 			</g>
+			<path class="rocket" d="M-8-220-36-120-30-78-2-110z"/>
+			<path class="rocket" d="M8-220 36-120 30-78 2-110z"/>
 			<path class="rocket" d="M0 0l29.94-425.92c2.19-31.09-8.76-61.58-29.94-83.41-21 22.13-31.65 52.26-29.53 82.91z"/>
 		</g>
 	</g>
